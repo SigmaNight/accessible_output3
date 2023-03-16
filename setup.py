@@ -9,15 +9,15 @@ with io.open("readme.rst", encoding="UTF8") as readme:
     long_description = readme.read()
 
 setup(
-    name="accessible_output2",
-    author="Tyler Spivey",
-    author_email="tspivey@pcdesk.net",
-    version="0.17",
+    name="accessible_output3",
+    author="Luna R",
+    author_email="pypi@lvna.me",
+    version="0.1.1",
     description=__doc__,
     long_description=long_description,
-    package_dir={"accessible_output2": "accessible_output2"},
+    package_dir={"accessible_output3": "accessible_output3"},
     packages=find_packages(),
-    package_data={"accessible_output2": ["lib/*"]},
+    package_data={"accessible_output3": ["lib/*"]},
     zip_safe=False,
     install_requires=["libloader", "platform_utils"],
     extras_require={

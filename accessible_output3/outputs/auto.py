@@ -1,12 +1,12 @@
 from __future__ import absolute_import
-import accessible_output2
+import accessible_output3
 from .base import Output, OutputError
 
 
 class Auto(Output):
     """An output which automatically selects the first available output on the system"""
     def __init__(self):
-        output_classes = accessible_output2.get_output_classes()
+        output_classes = accessible_output3.get_output_classes()
         self.outputs = []
         for output in output_classes:
             try:

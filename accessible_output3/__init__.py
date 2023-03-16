@@ -8,13 +8,13 @@ from platform_utils import paths
 def load_library(libname, cdll=False):
     if paths.is_frozen():
         libfile = os.path.join(
-            paths.embedded_data_path(), "accessible_output2", "lib", libname
+            paths.embedded_data_path(), "accessible_output3", "lib", libname
         )
     else:
         libfile = os.path.join(paths.module_path(), "lib", libname)
     if not os.path.exists(libfile):
         _cxfreeze_libfile = os.path.join(
-            paths.embedded_data_path(), "lib", "accessible_output2", "lib", libname
+            paths.embedded_data_path(), "lib", "accessible_output3", "lib", libname
         )
         if os.path.exists(_cxfreeze_libfile):
             libfile = _cxfreeze_libfile
@@ -38,11 +38,11 @@ def get_output_classes():
 def find_datafiles():
     import platform
     from glob import glob
-    import accessible_output2
+    import accessible_output3
 
     if platform.system() != "Windows":
         return []
-    path = os.path.join(accessible_output2.__path__[0], "lib", "*.dll")
+    path = os.path.join(accessible_output3.__path__[0], "lib", "*.dll")
     results = glob(path)
-    dest_dir = os.path.join("accessible_output2", "lib")
+    dest_dir = os.path.join("accessible_output3", "lib")
     return [(dest_dir, results)]

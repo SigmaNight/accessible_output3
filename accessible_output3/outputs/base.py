@@ -1,4 +1,4 @@
-from accessible_output2 import load_library
+from accessible_output3 import load_library
 import platform
 
 
@@ -30,7 +30,7 @@ class Output(object):
 
     priority = 100
     """int: The priority this output should be given when automatically choosing possible outputs.
-    See :class:`accessible_output2.outputs.auto.Auto`.
+    See :class:`accessible_output3.outputs.auto.Auto`.
     Priority begins at 100. Anything higher will throw it lower on the list of available outputs. Anything lower will make it more likely to be the first option selected.
     Example, screen readers are sometimes given a higher priority (usuallly 100) than TTS such as SAAPI5 (101) due to a common usability preference."""
 

@@ -17,8 +17,8 @@ sys.path.insert(0, os.path.abspath('..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'accessible_output2'
-copyright = '2019, Tyler Spivey, Christopher Toth'
+project = 'accessible_output3'
+copyright = '2019, Tyler Spivey, Christopher Toth, Luna R'
 author = 'Tyler Spivey, Christopher Toth'
 
 # To prevent master file contents.rst not found.
