@@ -12,7 +12,7 @@ setup(
     name="accessible_output3",
     author="Luna R",
     author_email="pypi@lvna.me",
-    version="0.1.1",
+    version="0.1.2",
     description=__doc__,
     long_description=long_description,
     package_dir={"accessible_output3": "accessible_output3"},
