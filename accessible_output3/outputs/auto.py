@@ -36,6 +36,32 @@ class Auto(Output):
         if output:
             output.speak(*args, **kwargs)
 
+    def speak_ssml(self, *args, **kwargs):
+        """
+        Speaks the given ssml if the output supports ssml
+
+        Args:
+          text (str): The text to speak.
+          **options: Additional options.
+        """
+        output = self.get_first_available_output()
+        if output:
+            output.speak_ssml(*args, **kwargs)
+
+    def speak_character(self, *args, **kwargs):
+        """
+        Speaks the given character if the output supports speech
+
+        Args:
+          text (str): The text to speak.
+          **options: Additional options.
+        """
+        output = self.get_first_available_output()
+        if output:
+            output.speak_character(*args, **kwargs)
+
+
+
     def braille(self, *args, **kwargs):
         """
         Brailles the given text if the output supports Braille

@@ -87,6 +87,25 @@ class Output(object):
         """
         return False
 
+    def speak_ssml(self, text, **options):
+        """
+        Speaks the given SSML.
+
+        Args:
+          text (str): The text to speak.
+          **options: Additional options.
+        """
+        return False
+
+    def speak_character(self, text):
+        """
+        Speaks the given character.
+
+        Args:
+          text (str): The text to speak.
+        """
+        return False
+
     def braille(self, text, **options):
         """
         Brailles the given text.

@@ -31,6 +31,7 @@ class NVDA(Output):
         "nvdaController_brailleMessage": (ctypes.c_wchar_p,),
         "nvdaController_speakText": (ctypes.c_wchar_p,),
         "nvdaController_speakSsml": (ctypes.c_wchar_p, ctypes.c_int, ctypes.c_int, ctypes.c_bool, ),
+        "nvdaController_OnSsmlMarkReached": (ctypes.c_wchar_p),
     }
 
     def is_active(self):
@@ -48,16 +49,20 @@ class NVDA(Output):
         self.lib.nvdaController_speakText(text)
 
     def speak_ssml(self, text, symbol_level=SYMBOL_LEVEL_UNCHANGED, priority_level=PRIORITY_LEVEL_NORMAL, asynchronous=True):
-        self.lib.nvdaController_speakSsml(
+        result = self.lib.nvdaController_speakSsml(
             text,
             symbol_level,
             priority_level,
             asynchronous
         )
-    
+        if result == 1717:
+            return False
+
     def speak_character(self, text):
-        self.speak_ssml(f"<speak>{text}</speak>", SYMBOL_LEVEL_CHAR)
-    
+        if not self.speak_ssml(f"<speak>{text}</speak>", SYMBOL_LEVEL_CHAR):
+            self.speak(text, False)
+
+
     def silence(self):
         self.lib.nvdaController_cancelSpeech()
 
