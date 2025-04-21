@@ -22,7 +22,7 @@ setup(
     install_requires=[
         "libloader",
         "platform_utils @ git+https://github.com/accessibleapps/platform_utils.git@e0d79f7b399c4ea677a633d2dde9202350d62c38",
-        "winpaths @ git+https://github.com/Accessiware/winpaths.git@57eb1f0fb45e150391463263598b0ac18eb171eb"
+        "winpaths @ git+https://github.com/sigmaNight/winpaths.git@57eb1f0fb45e150391463263598b0ac18eb171eb"
     ],
     extras_require={
         ':sys_platform == "win32"': ["pywin32", "libloader"],
