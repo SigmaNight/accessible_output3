@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 from collections import OrderedDict
-from libloader.com import load_com
+from ..utils import load_com
 from .base import Output, OutputError
 import pywintypes
 import logging

@@ -1,5 +1,5 @@
 from __future__ import absolute_import
-from libloader.com import load_com
+from ..utils import load_com
 from .base import Output, OutputError
 import pywintypes
 
