@@ -1,4 +1,4 @@
-from accessible_output3 import load_library
+from ..utils import load_library
 import platform
 
 

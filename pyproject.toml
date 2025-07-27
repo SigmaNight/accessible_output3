@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=80.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "accessible_output3"
+dynamic = ["version"]
+description = "Library to provide speech and braille output to a variety of different screen readers and other accessibility solutions."
+readme = "readme.rst"
+license = {text = "MIT"}
+authors = [
+    { name = "Luna R", email = "pypi@lvna.me" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux", 
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Adaptive Technologies",
+    "Topic :: Software Development :: Libraries",
+]
+
+requires-python = ">=3.8"
+dependencies = [
+    "pywin32; sys_platform == 'win32'",
+    "pyobjc; sys_platform == 'darwin'",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+    "setuptools_scm",
+]
+
+[project.urls]
+Homepage = "https://github.com/SigmaNight/accessible_output3"
+Repository = "https://github.com/SigmaNight/accessible_output3"
+Issues = "https://github.com/SigmaNight/accessible_output3/issues"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by formatter
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

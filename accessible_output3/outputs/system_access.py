@@ -16,11 +16,11 @@ class SystemAccess(Output):
 
     def speak(self, text, interrupt=False):
         if self.is_active():
-            self.dll.SA_SayW(str(text))
+            self.lib.SA_SayW(str(text))
 
     def is_active(self):
         try:
-            return self.dll.SA_IsRunning()
+            return self.lib.SA_IsRunning()
         except:
             return False
 

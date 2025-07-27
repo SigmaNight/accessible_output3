@@ -1,26 +1,6 @@
-from __future__ import absolute_import
-import ctypes
 import os
 import types
-from platform_utils import paths
-
-
-def load_library(libname, cdll=False):
-    if paths.is_frozen():
-        libfile = os.path.join(
-            paths.embedded_data_path(), "accessible_output3", "lib", libname
-        )
-    else:
-        libfile = os.path.join(paths.module_path(), "lib", libname)
-    if not os.path.exists(libfile):
-        _cxfreeze_libfile = os.path.join(
-            paths.embedded_data_path(), "lib", "accessible_output3", "lib", libname
-        )
-        if os.path.exists(_cxfreeze_libfile):
-            libfile = _cxfreeze_libfile
-    if cdll:
-        return ctypes.cdll[libfile]
-    return ctypes.windll[libfile]
+from accessible_output3.utils import load_library
 
 
 def get_output_classes():
