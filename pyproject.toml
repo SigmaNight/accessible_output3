@@ -28,7 +28,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries",
 ]
 
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "pywin32; sys_platform == 'win32'",
     "pyobjc; sys_platform == 'darwin'",
@@ -45,6 +45,14 @@ dev = [
 Homepage = "https://github.com/SigmaNight/accessible_output3"
 Repository = "https://github.com/SigmaNight/accessible_output3"
 Issues = "https://github.com/SigmaNight/accessible_output3/issues"
+
+
+[tool.setuptools.package-data]
+accessible_output3 = [
+    "lib/*.dll",
+]
+
+[tool.setuptools_scm]
 
 [tool.ruff]
 line-length = 88
